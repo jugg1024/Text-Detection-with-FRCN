@@ -1,6 +1,9 @@
 [submodule "py-faster-rcnn"]
 	path = py-faster-rcnn
 	url = https://github.com/jugg1024/py-faster-rcnn.git
+[submodule "datasets/coco-text/coco-text"]
+	path = datasets/coco-text/coco-text
+	url = https://github.com/jugg1024/coco-text.git
 [submodule "datasets/coco-text/coco-text-tool"]
 	path = datasets/coco-text/coco-text-tool
 	url = https://github.com/jugg1024/coco-text.git
