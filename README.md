@@ -8,7 +8,7 @@ This repository is aimed at provide an example of training text-detection models
 
 ### Download repo 
 
-  1. Clone the repository
+  + Clone the repository
   
   ```Shell
   # Make sure to clone with --recursive
@@ -17,16 +17,16 @@ This repository is aimed at provide an example of training text-detection models
 
 ### Compile
 
-  1. Compile py-faster-rcnn
+  + Compile py-faster-rcnn
 
-  1.1 change the branch of py-faster-rcnn to text-detection-demo
+  2.1 change the branch of py-faster-rcnn to text-detection-demo
 
 	```Shell
 	cd $Text-Detection-with-FRCN/py-faster-rcnn
     	git checkout text-detection
    ```
 
-  1.2 Build Caffe and pycaffe.
+  2.2 Build Caffe and pycaffe.
 
  	```Shell
 	# ensure your enviroment support the training of caffeensure your enviroment support the training of caffe
@@ -42,9 +42,24 @@ This repository is aimed at provide an example of training text-detection models
 	'1.0.0-rc3'
 	```
 
-  1.3 Build the Cython modules.
+  2.3 Build the Cython modules.
 
  	```Shell
 	cd $Text-Detection-with-FRCN/py-faster-rcnn/lib
 	make
+	```
+	
+### Run demo
+
+  + Run text detection demo
+
+  3.1 download pre-trained model
+
+	URL: http://pan.baidu.com/s/1dE2Ori5  Extract Code: phxk
+
+  3.2 run demo
+
+ 	```Shell
+	cd $Text-Detection-with-FRCN/
+	./script/text_detect_demo.sh
 	```
