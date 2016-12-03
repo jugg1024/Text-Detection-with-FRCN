@@ -1,1 +1,1 @@
-matlab -nodisplay -nodesktop -r "ann2voc2007('$1')"
+matlab -nodisplay -nodesktop -r "ann2voc2007('$1'); quit"
