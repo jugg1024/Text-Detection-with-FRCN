@@ -23,7 +23,7 @@ This repository is aimed at provide an example of training text-detection models
 
 	```Shell
 	cd $Text-Detection-with-FRCN/py-faster-rcnn
-    	git checkout text-detection-demo
+    	git checkout text-detection
    ```
 
   1.2 Build Caffe and pycaffe.
