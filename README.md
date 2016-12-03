@@ -96,7 +96,7 @@ This repository is aimed at provide an example of training text-detection models
 	# format the raw image and label into the type of pascal_voc
 	# follow the code in $Text-Detection-with-FRCN/datasets/script/format_annotation.py
 	cd $Text-Detection-with-FRCN/datasets/script
-	./format_annotation.pyformat_annotation.py --dataset coco-text
+	./format_annotation.py --dataset coco-text
 	```
 	
   4.4 create a softlink the formatted data to working directorry
