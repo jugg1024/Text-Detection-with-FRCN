@@ -1,6 +1,5 @@
 ./py-faster-rcnn/tools/text_detect_demo.py \
-	--gpu 1 \
-	--net vgg16 \
-  --class_name text \
-	--model vgg16_faster_rcnn_coco_text.caffemodel \
-	--dataset datasets/visual-test
+	--gpu 0 \
+	--net models/deploy.prototxt \
+	--model models/vgg16_faster_rcnn_fine_tune_on_coco.caffemodel \
+	--dataset datasets/test
