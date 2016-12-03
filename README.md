@@ -1,21 +1,50 @@
+### Text Detection Using [py-faster-rcnn](https://github.com/rbgirshick/py-faster-rcnn/blob/master/README.md).
+
+# image #
+
 ### Introduction
 
-Text Detection Using [py-faster-rcnn](https://github.com/rbgirshick/py-faster-rcnn/blob/master/README.md).
+This repository is aimed at provide an example of training text-detection models using *faster-rcnn*
 
-This repository is aimed at 
+### Download repo 
 
-(1) provide an example of training text-detection models using up-to-date models like *faster-rcnn* and *FCN*. 
+  1. Clone the repository
+  
+  ```Shell
+  # Make sure to clone with --recursive
+  git clone --recursive https://github.com/jugg1024/Text-Detection-with-FRCN.git
+  ```
 
-(2) Dataset preprocessing, and training of multiple datasets.
+### Compile
 
+  1. Compile py-faster-rcnn
 
-
-### COCO-text
-
-first, download the datasets and annotations using fetch-coco-text:
+  1.1 change the branch of py-faster-rcnn to text-detection-demo
 
 	```Shell
-	cd $ROOT/datasets
-	./script/fetch_datasets.sh <dataset name>   
-	# eg: ./script/fetch_datasets.sh coco-text 
+	cd $Text-Detection-with-FRCN/py-faster-rcnn
+    	git checkout text-detection-demo
+   ```
+
+  1.2 Build Caffe and pycaffe.
+
+ 	```Shell
+	# ensure your enviroment support the training of caffeensure your enviroment support the training of caffe
+	cd $Text-Detection-with-FRCN/py-faster-rcnn/caffe-fast-rcnn
+	cp Makefile.config.example Makefile.config
+	# adjust the Makefile.config
+	make -j16 && make pycaffe    # here only python api is used.
+	# test if caffe python api is ok.
+	cd python
+	python
+	>>> import caffe
+	>>> caffe.__version__
+	'1.0.0-rc3'
+	```
+
+  1.3 Build the Cython modules.
+
+ 	```Shell
+	cd $Text-Detection-with-FRCN/py-faster-rcnn/lib
+	make
 	```
