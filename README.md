@@ -19,18 +19,16 @@ This repository is aimed at provide an example of training text-detection models
 
   1. Compile py-faster-rcnn
 
-  first change the branch of py-faster-rcnn to text-detection-demo
+  1.1 change the branch of py-faster-rcnn to text-detection-demo
 
 	```Shell
 	cd $Text-Detection-with-FRCN/py-faster-rcnn
     	git checkout text-detection-demo
-    	```
+   ```
 
-  then follow the steps in [py-faster-rcnn](https://github.com/rbgirshick/py-faster-rcnn/blob/master/README.md).
+  1.2 Build Caffe and pycaffe.
 
-  1.1 Build Caffe and pycaffe.
-
-	```Shell
+ 	```Shell
 	# ensure your enviroment support the training of caffeensure your enviroment support the training of caffe
 	cd $Text-Detection-with-FRCN/py-faster-rcnn/caffe-fast-rcnn
 	cp Makefile.config.example Makefile.config
@@ -44,7 +42,7 @@ This repository is aimed at provide an example of training text-detection models
 	'1.0.0-rc3'
 	```
 
-  1.2 Build the Cython modules.
+  1.3 Build the Cython modules.
 
  	```Shell
 	cd $Text-Detection-with-FRCN/py-faster-rcnn/lib
