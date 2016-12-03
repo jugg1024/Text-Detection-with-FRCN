@@ -63,3 +63,53 @@ This repository is aimed at provide an example of training text-detection models
 	cd $Text-Detection-with-FRCN/
 	./script/text_detect_demo.sh
 	```
+
+
+### Further
+
+  if you think the model is not ok, then you can trainning with your own dataset, take coco-text for example.
+  
+  + training 
+
+  4.1 download coco-text dataset
+
+	```Shell
+	cd $Text-Detection-with-FRCN/datasets/script
+	./fetch_dataset.sh coco-text
+	# download it takes long!
+	# ensure you have both data and label
+	# for coco-text label is in COCO-text.json, and data is in train2014.zip
+	```
+
+  4.2 download pre-train model
+
+	```Shell
+	# finetune on this model, you can also use one model you train before
+	cd $Text-Detection-with-FRCN/py-faster-rcnn
+	./data/scripts/fetch_imagenet_models.sh
+	# download it takes long!
+	```
+
+  4.3 format the data(you should write your code here)
+
+ 	```Shell
+	# format the raw image and label into the type of pascal_voc
+	# follow the code in $Text-Detection-with-FRCN/datasets/script/format_annotation.py
+	cd $Text-Detection-with-FRCN/datasets/script
+	./format_annotation.pyformat_annotation.py --dataset coco-text
+	```
+	
+  4.4 create a softlink the formatted data to working directorry
+       
+ 	```Shell
+	# link your data folder to train_data
+	cd $Text-Detection-with-FRCN/datasets/
+	ln -s train_data coco-text    # $YOUR_DATA
+	```       
+        
+  4.5 training
+      
+	```Shell
+	cd $Text-Detection-with-FRCN/py-faster-rcnn/
+	./experiments/scripts/faster_rcnn_end2end.sh [gpu-id] [net](VGG16) [label_type](must be pascal_voc)
+	```
