@@ -56,13 +56,16 @@ This repository is aimed at provide an example of training text-detection models
   3.1 download pre-trained model
 
 	URL: http://pan.baidu.com/s/1dE2Ori5  Extract Code: phxk
-
+	```Shell
+	ln -s $DOWNLOAD_MODEL_PATH $Text-Detection-with-FRCN/model/vgg16_faster_rcnn_fine_tune_on_coco.caffemodel
+	```
   3.2 run demo
 
  	```Shell
 	cd $Text-Detection-with-FRCN/
 	./script/text_detect_demo.sh
 	```
+	Results are on output_img
 
 
 ### Further
@@ -111,5 +114,5 @@ This repository is aimed at provide an example of training text-detection models
       
 	```Shell
 	cd $Text-Detection-with-FRCN/py-faster-rcnn/
-	./experiments/scripts/faster_rcnn_end2end.sh [gpu-id] [net](VGG16) [label_type](must be pascal_voc)
+	./experiments/scripts/faster_rcnn_end2end.sh 0 VGG16 pascal_voc
 	```
