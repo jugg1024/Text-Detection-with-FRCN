@@ -55,6 +55,8 @@ make
   3.1 download pre-trained model
 
 	URL: http://pan.baidu.com/s/1dE2Ori5  Extract Code: phxk
+	
+	LINK FROM HUBIC: https://ovh.to/SivaG2
 ```Shell
 ln -s $DOWNLOAD_MODEL_PATH $Text-Detection-with-FRCN/model/vgg16_faster_rcnn_fine_tune_on_coco.caffemodel
 ```
